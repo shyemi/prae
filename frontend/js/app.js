@@ -2,14 +2,14 @@ const { animate, scroll, inView, stagger, hover } = window.Motion
 
 const MOCK_DATA = {
   productos: [
-    {id:1,nombre:"Split Inverter 12K BTU",categoria:{nombre:"Aires Acondicionados"},descripcion:"Alta eficiencia con compresor inverter.",precio:28500,disponibilidad:"disponible",imagenes:["https://placehold.co/600x400/0f1a2e/ffffff?text=Split+12K"]},
-    {id:2,nombre:"Nevera No Frost 12 pies",categoria:{nombre:"Neveras"},descripcion:"Sistema No Frost, eficiencia A++.",precio:32000,disponibilidad:"disponible",imagenes:["https://placehold.co/600x400/0f1a2e/ffffff?text=Nevera+12"]},
-    {id:3,nombre:"Aire de Ventana 10K BTU",categoria:{nombre:"Aires Acondicionados"},descripcion:"Compacto y eficiente.",precio:12500,disponibilidad:"disponible",imagenes:["https://placehold.co/600x400/0f1a2e/ffffff?text=Ventana+10K"]},
-    {id:4,nombre:"Compresor 1.5 HP",categoria:{nombre:"Piezas"},descripcion:"Compresor rotativo R410A.",precio:8500,disponibilidad:"disponible",imagenes:[]},
-    {id:5,nombre:"Condensador 35uF",categoria:{nombre:"Piezas"},descripcion:"Condensador de arranque.",precio:450,disponibilidad:"disponible",imagenes:[]},
-    {id:6,nombre:"Nevera Ciclica 10 pies",categoria:{nombre:"Neveras"},descripcion:"Economica y confiable.",precio:18000,disponibilidad:"agotado",imagenes:["https://placehold.co/600x400/0f1a2e/ffffff?text=Nevera+10"]},
-    {id:7,nombre:"Kit de Instalacion",categoria:{nombre:"Accesorios"},descripcion:"Tuberia, cable y soportes.",precio:2500,disponibilidad:"disponible",imagenes:[]},
-    {id:8,nombre:"Termostato Digital",categoria:{nombre:"Accesorios"},descripcion:"Pantalla LED, programable.",precio:1200,disponibilidad:"disponible",imagenes:[]},
+    {id:1,nombre:"Split Inverter 12K BTU",categoria:{nombre:"Aires Acondicionados"},descripcion:"Alta eficiencia con compresor inverter.",precio:28500,disponibilidad:"disponible",imagenes:["https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&h=400&fit=crop"]},
+    {id:2,nombre:"Nevera No Frost 12 pies",categoria:{nombre:"Neveras"},descripcion:"Sistema No Frost, eficiencia A++.",precio:32000,disponibilidad:"disponible",imagenes:["https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=600&h=400&fit=crop"]},
+    {id:3,nombre:"Aire de Ventana 10K BTU",categoria:{nombre:"Aires Acondicionados"},descripcion:"Compacto y eficiente.",precio:12500,disponibilidad:"disponible",imagenes:["https://images.unsplash.com/photo-1573641232560-bb0873d987ef?w=600&h=400&fit=crop"]},
+    {id:4,nombre:"Compresor 1.5 HP",categoria:{nombre:"Piezas"},descripcion:"Compresor rotativo R410A.",precio:8500,disponibilidad:"disponible",imagenes:["https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&h=400&fit=crop"]},
+    {id:5,nombre:"Condensador 35uF",categoria:{nombre:"Piezas"},descripcion:"Condensador de arranque.",precio:450,disponibilidad:"disponible",imagenes:["https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=600&h=400&fit=crop"]},
+    {id:6,nombre:"Nevera Ciclica 10 pies",categoria:{nombre:"Neveras"},descripcion:"Economica y confiable.",precio:18000,disponibilidad:"agotado",imagenes:["https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=400&fit=crop"]},
+    {id:7,nombre:"Kit de Instalacion",categoria:{nombre:"Accesorios"},descripcion:"Tuberia, cable y soportes.",precio:2500,disponibilidad:"disponible",imagenes:["https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=600&h=400&fit=crop"]},
+    {id:8,nombre:"Termostato Digital",categoria:{nombre:"Accesorios"},descripcion:"Pantalla LED, programable.",precio:1200,disponibilidad:"disponible",imagenes:["https://images.unsplash.com/photo-1585123334904-845d60e97b29?w=600&h=400&fit=crop"]},
   ],
   servicios: [
     {id:1,nombre:"Reparacion de Aires",descripcion_corta:"Diagnostico y reparacion profesional.",descripcion_larga:""},
@@ -18,9 +18,9 @@ const MOCK_DATA = {
     {id:4,nombre:"Asesoria Tecnica",descripcion_corta:"Consultoria en climatizacion.",descripcion_larga:""},
   ],
   trabajos: [
-    {id:1,titulo:"Instalacion Climatizacion Centro Comercial",descripcion:"Sistema centralizado de 120 toneladas.",media:[]},
-    {id:2,titulo:"Mantenimiento Edificio Corporativo",descripcion:"Mantenimiento preventivo de 45 equipos.",media:[]},
-    {id:3,titulo:"Reparacion Sistema Refrigeracion",descripcion:"Diagnostico y reparacion de camara frigorifica.",media:[]},
+    {id:1,titulo:"Instalacion Climatizacion Centro Comercial",descripcion:"Sistema centralizado de 120 toneladas.",media:["https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&h=500&fit=crop"]},
+    {id:2,titulo:"Mantenimiento Edificio Corporativo",descripcion:"Mantenimiento preventivo de 45 equipos.",media:["https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&h=500&fit=crop"]},
+    {id:3,titulo:"Reparacion Sistema Refrigeracion",descripcion:"Diagnostico y reparacion de camara frigorifica.",media:["https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=800&h=500&fit=crop"]},
   ],
   ofertas: [
     {id:1,titulo:"20% OFF en Mantenimiento",descripcion:"Aproveche nuestro descuento en mantenimiento preventivo para aires acondicionados."},
