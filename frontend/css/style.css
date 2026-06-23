@@ -68,11 +68,11 @@
 }
 
 [data-theme="dark"] .header__logo-img {
-  filter: brightness(0) invert(1);
+  opacity: 0.85;
 }
 
 [data-theme="dark"] .footer__logo {
-  filter: brightness(0) invert(1);
+  opacity: 0.85;
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
