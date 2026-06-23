@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRAE — Refrigeracion y Climatizacion</title>
+<meta name="description" content="Venta, reparacion, mantenimiento y asesoria de aires acondicionados, neveras y piezas. 12 anos de experiencia.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="css/style.css">
+<script>
+(function(){
+  var t = localStorage.getItem('prae-theme');
+  if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/motion@12.40.0/dist/motion.js"></script>
+</head>
+<body>
+
+<div class="hero-curtain" id="heroCurtain" aria-hidden="true">
+  <div class="hero-curtain__panel hero-curtain__panel--top"></div>
+  <div class="hero-curtain__panel hero-curtain__panel--bottom"></div>
+  <div class="hero-curtain__line"></div>
+</div>
+
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="/" class="header__logo">
+      <img src="logo.png" alt="PRAE" class="header__logo-img">
+    </a>
+    <button class="header__menu-btn" id="menuToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="header__nav" id="mainNav">
+      <a href="#inicio" class="header__link">Inicio</a>
+      <a href="#productos" class="header__link">Productos</a>
+      <a href="#servicios" class="header__link">Servicios</a>
+      <a href="#trabajos" class="header__link">Trabajos</a>
+      <a href="#testimonios" class="header__link">Testimonios</a>
+      <a href="#contacto" class="header__link">Contacto</a>
+      <a href="#ubicacion" class="header__link">Ubicacion</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar tema">
+        <i class="fas fa-moon theme-toggle__icon theme-toggle__icon--to-dark" aria-hidden="true"></i>
+        <i class="fas fa-sun theme-toggle__icon theme-toggle__icon--to-light" aria-hidden="true"></i>
+      </button>
+      <a href="admin.html" class="header__link header__link--admin"><i class="fas fa-lock"></i></a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero__grid" aria-hidden="true"></div>
+  <div class="hero__accent" aria-hidden="true"></div>
+
+  <div class="hero__inner">
+    <div class="hero__meta">
+      <span class="hero__index">01</span>
+      <span class="hero__divider"></span>
+      <span class="hero__since">Desde 2014</span>
+    </div>
+
+    <h1 class="hero__title" aria-label="PRAE">
+      <span class="hero__letter" data-char="P"><span class="hero__letter-inner">P</span></span>
+      <span class="hero__letter" data-char="R"><span class="hero__letter-inner">R</span></span>
+      <span class="hero__letter" data-char="A"><span class="hero__letter-inner">A</span></span>
+      <span class="hero__letter" data-char="E"><span class="hero__letter-inner">E</span></span>
+    </h1>
+
+    <div class="hero__rule"></div>
+
+    <p class="hero__tagline">
+      <span class="hero__tagline-word">Refrigeracion</span>
+      <span class="hero__tagline-sep">&</span>
+      <span class="hero__tagline-word">Climatizacion</span>
+    </p>
+
+    <p class="hero__desc">Venta, reparacion, mantenimiento y asesoria de aires acondicionados, neveras y piezas.</p>
+
+    <div class="hero__actions">
+      <a href="#productos" class="btn btn--primary">Ver catalogo</a>
+      <a href="#contacto" class="btn btn--outline">Contactar</a>
+    </div>
+  </div>
+
+  <div class="hero__scroll" id="heroScroll">
+    <span class="hero__scroll-line"></span>
+    <span class="hero__scroll-text">Descubrir</span>
+  </div>
+</section>
+
+<section class="section stats">
+  <div class="container stats__grid">
+    <div class="stat-card">
+      <div class="stat-card__number" id="statYears">12<span class="stat-card__suffix">+</span></div>
+      <div class="stat-card__label">Anos de experiencia</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card__number" id="statProducts">0</div>
+      <div class="stat-card__label">Productos disponibles</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card__number" id="statServices">0</div>
+      <div class="stat-card__label">Servicios profesionales</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card__number" id="statClients">0</div>
+      <div class="stat-card__label">Clientes satisfechos</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="productos">
+  <div class="container">
+    <span class="section__label">Catalogo</span>
+    <h2 class="section__title">Productos</h2>
+    <p class="section__subtitle">Neveras, aires acondicionados, piezas y repuestos de la mejor calidad</p>
+    <div class="category-scroll" id="productFilters"></div>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</section>
+
+<section class="section section--gray" id="servicios">
+  <div class="container">
+    <span class="section__label">Servicios</span>
+    <h2 class="section__title">Soluciones completas</h2>
+    <p class="section__subtitle">Todo lo que necesita para mantener su hogar o negocio en la temperatura ideal</p>
+    <div class="services-grid" id="servicesGrid"></div>
+  </div>
+</section>
+
+<section class="section section--dark" id="trabajos">
+  <div class="container">
+    <span class="section__label">Portafolio</span>
+    <h2 class="section__title">Trabajos realizados</h2>
+    <p class="section__subtitle">Proyectos que hablan por si solos</p>
+    <div class="works-grid" id="worksGrid"></div>
+  </div>
+</section>
+
+<section class="section section--glass" id="ofertas">
+  <div class="container">
+    <span class="section__label">Promociones</span>
+    <h2 class="section__title">Ofertas especiales</h2>
+    <p class="section__subtitle">Aproveche nuestras promociones y descuentos exclusivos</p>
+    <div class="offers-grid" id="offersGrid"></div>
+  </div>
+</section>
+
+<section class="section section--dark" id="testimonios">
+  <div class="container">
+    <span class="section__label">Opiniones</span>
+    <h2 class="section__title">Lo que dicen nuestros clientes</h2>
+    <p class="section__subtitle">La satisfaccion de nuestros clientes es nuestra mejor carta de presentacion</p>
+    <div class="testimonials-grid" id="testimonialsSlider"></div>
+    <div class="text-center" style="text-align:center;margin-top:40px">
+      <button class="btn btn--light" id="addTestimonialBtn"><i class="far fa-star"></i> Deje su opinion</button>
+    </div>
+  </div>
+</section>
+
+<section class="section section--gray" id="btu">
+  <div class="container">
+    <span class="section__label">Herramienta</span>
+    <h2 class="section__title">Calculadora BTU</h2>
+    <p class="section__subtitle">Descubra la capacidad de aire acondicionado ideal para su espacio</p>
+    <div class="btu-calc">
+      <form id="btuForm">
+        <div class="btu-calc__grid">
+          <div class="form-group">
+            <label>Area (m<sup>2</sup>)</label>
+            <input type="number" id="btuArea" class="form-input" placeholder="Ej: 25" required>
+          </div>
+          <div class="form-group">
+            <label>Altura techo (m)</label>
+            <input type="number" id="btuHeight" class="form-input" placeholder="Ej: 2.5" step="0.1" value="2.5">
+          </div>
+          <div class="form-group">
+            <label>Personas</label>
+            <input type="number" id="btuPeople" class="form-input" placeholder="Ej: 2" value="2">
+          </div>
+          <div class="form-group">
+            <label>Equipos electronicos</label>
+            <select id="btuElectronics" class="form-input">
+              <option value="0">Pocos</option>
+              <option value="1">Moderados</option>
+              <option value="2">Muchos</option>
+            </select>
+          </div>
+        </div>
+        <div class="btu-calc__result" id="btuResult">
+          <div class="btu-calc__value" id="btuValue">0</div>
+          <div class="btu-calc__label">BTU recomendados</div>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Calcular BTU</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contacto">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <span class="section__label" style="text-align:left">Contacto</span>
+        <h2 class="section__title section__title--left">Hablemos</h2>
+        <p class="section__subtitle" style="text-align:left;margin-bottom:40px">Estamos listos para ayudarle</p>
+        <div class="contact-info__items" id="contactInfo"></div>
+        <div class="social-links" id="socialLinks"></div>
+      </div>
+      <div>
+        <form id="contactForm">
+          <div class="form-group">
+            <input type="text" class="form-input" name="nombre" placeholder="Su nombre" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-input" name="email" placeholder="Su email">
+          </div>
+          <div class="form-group">
+            <input type="tel" class="form-input" name="telefono" placeholder="Su telefono">
+          </div>
+          <div class="form-group">
+            <textarea class="form-input" name="mensaje" placeholder="Su mensaje" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Enviar mensaje <i class="fas fa-arrow-right"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--gray" id="ubicacion">
+  <div class="container">
+    <span class="section__label">Ubicacion</span>
+    <h2 class="section__title">Encuentranos</h2>
+    <p class="section__subtitle">Visite nuestro local en Espinal, Santo Domingo</p>
+    <div class="location">
+      <div class="location__map-wrap">
+        <iframe
+          class="location__map"
+          id="locationMap"
+          title="Ubicacion de PRAE Climatizacion y Refrigeracion"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+          src="https://maps.google.com/maps?q=18.4680273,-69.998676&z=17&hl=es&output=embed">
+        </iframe>
+      </div>
+      <div class="location__panel">
+        <div class="location__address">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <strong>Direccion</strong>
+            <p id="locationAddress">Prae Climatizacion &amp; Refrigeracion, Espinal, Santo Domingo</p>
+          </div>
+        </div>
+        <div class="location__actions">
+          <a href="https://maps.app.goo.gl/ntJpyw3oX22j4YxTA" target="_blank" rel="noopener" class="btn btn--primary btn--full" id="locationDirections">
+            <i class="fas fa-directions"></i> Como llegar
+          </a>
+          <a href="https://maps.app.goo.gl/ntJpyw3oX22j4YxTA" target="_blank" rel="noopener" class="btn btn--outline btn--full">
+            <i class="fab fa-google"></i> Abrir en Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <img src="logo.png" alt="PRAE" class="footer__logo">
+      <p>Tu comodidad y confort es nuestra satisfaccion</p>
+    </div>
+    <div>
+      <h4>Enlaces</h4>
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#ubicacion">Ubicacion</a>
+      <a href="admin.html">Administracion</a>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <p><i class="fas fa-phone"></i> <span id="footerPhone">809-303-9156</span></p>
+      <p><i class="fas fa-envelope"></i> <span id="footerEmail">espinalclimatizacion@gmail.com</span></p>
+      <p><i class="fas fa-clock"></i> <span id="footerHours">Lunes a sabado 8:00am - 6:00pm</span></p>
+    </div>
+    <div>
+      <h4>Newsletter</h4>
+      <p style="font-size:12px;margin-bottom:12px;color:var(--accent-muted)">Recibe ofertas y novedades</p>
+      <form class="newsletter">
+        <input type="email" placeholder="Tu email" required>
+        <button type="submit">SUSCRIBIR</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container">
+      <p>&copy; 2026 PRAE Refrigeracion y Climatizacion Espinal. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/18093039156" target="_blank" class="whatsapp-float wa-link" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+  <span class="tooltip">Escribanos por WhatsApp</span>
+</a>
+
+<div class="modal" id="testimonialModal">
+  <div class="modal__overlay" id="modalOverlay"></div>
+  <div class="modal__content">
+    <button class="modal__close" id="modalClose">&times;</button>
+    <h2 class="modal__title">Deje su opinion</h2>
+    <p class="modal__subtitle">Nos encantaria saber su experiencia</p>
+    <form id="testimonialForm">
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" class="form-input" name="nombre_publico" placeholder="Su nombre" required>
+      </div>
+      <div class="form-group">
+        <label>Comentario</label>
+        <textarea class="form-input" name="comentario" rows="3" placeholder="Cuentenos su experiencia" required></textarea>
+      </div>
+      <div class="form-group">
+        <label>Calificacion</label>
+        <div class="star-rating" id="starRating">
+          <i class="far fa-star" data-val="1"></i>
+          <i class="far fa-star" data-val="2"></i>
+          <i class="far fa-star" data-val="3"></i>
+          <i class="far fa-star" data-val="4"></i>
+          <i class="far fa-star" data-val="5"></i>
+        </div>
+        <input type="hidden" name="calificacion" id="calificacion" value="5">
+      </div>
+      <button type="submit" class="btn btn--primary btn--full">Enviar testimonio</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
