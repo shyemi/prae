@@ -463,7 +463,7 @@ async function loadWorks() {
             ${isVideo
               ? `<video src="${API.base}/${w.media[0]}" muted loop playsinline></video><div class="work-card__play"><i class="fas fa-play"></i></div>`
               : w.media?.length
-                ? `<img src="${API.base}/${w.media[0]}" alt="${w.titulo}" loading="lazy"><div class="work-card__play"><i class="fas fa-expand"></i></div>`
+                ? `<img src="${w.media[0].startsWith('http') ? w.media[0] : API.base + '/' + w.media[0]}" alt="${w.titulo}" loading="lazy"><div class="work-card__play"><i class="fas fa-expand"></i></div>`
                 : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:rgba(255,255,255,0.15);font-size:28px"><i class="fas fa-wrench"></i></div>'
             }
           </div>
